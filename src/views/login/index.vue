@@ -15,6 +15,7 @@
         :model="formValue"
         label-placement="left"
         :size="size"
+        :rules="rules"
       >
         <n-form-item label="姓名:" path="user.name">
           <n-input
@@ -23,7 +24,7 @@
             round
           />
         </n-form-item>
-        <n-form-item label="密码:" path="user.name">
+        <n-form-item label="密码:" path="user.password">
           <n-input
             type="password"
             show-password-on="click"
@@ -33,28 +34,55 @@
             round
           />
         </n-form-item>
+        <n-form-item label="">
+          <n-button type="info" round block @click="handleValidateClick"
+            >确定</n-button
+          >
+        </n-form-item>
       </n-form>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
-name: 'Login';
-const router = useRouter();
-const formValue = reactive({
+import { ref, reactive } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import { FormInst, FormItemInst, FormItemRule, FormRules } from "naive-ui";
+import { rule } from "@/utils";
+name: "Login";
+
+interface FormData {
   user: {
-    name: 'oop',
-        password: '11111',
+    name: string;
+    password: string;
+  };
+}
+const router = useRouter();
+const formRef = ref<FormInst | null>(null);
+const formValue: FormData = reactive({
+  user: {
+    name: "admin",
+    password: "123456",
   },
 });
-const size = ref<'small' | 'medium' | 'large'>('medium');
+const size = ref<"small" | "medium" | "large">("medium");
+const rules: FormRules = {
+  user: {
+    name: rule.name,
+    password: rule.password,
+  },
+};
+
+const handleValidateClick = (e: MouseEvent) => {
+  e.preventDefault();
+  formRef.value?.validate((errors) => {
+    if (!errors) {
+      console.log(11111);
+    } else {
+      console.log(errors);
+    }
+  });
+};
 </script>
 
-<style scoped>
-/* .Box {
-  background: url('@/assets/img/Bgc.JPG') no-repeat center center;
-  background-size: 100% 100%;
-} */
-</style>
+<style scoped></style>
