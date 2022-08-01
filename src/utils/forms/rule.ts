@@ -15,7 +15,7 @@ export const rule: FormRule = {
     },
     {
       pattern: /^[1-9][0-9]{4,10}$/,
-      message: "请输入正确的账号格式",
+      message: "请输入正确的账号格式",   // QQ号
       trigger: ["blur"],
     },
   ],
@@ -25,7 +25,7 @@ export const rule: FormRule = {
       message:'请输入密码',
     },
     {
-      pattern: '/^\S*(?=\S{6,})(?=\S*\d)(?=\S*[A-Z])(?=\S*[a-z])(?=\S*[!@#$%^&*? ])\S*$/',
+      pattern: /^\S*(?=\S{6,})(?=\S*\d)(?=\S*[A-Z])(?=\S*[a-z])(?=\S*[!@#$%^&*? ])\S*$/,
       message: '请输入正确的密码格式',
       trigger:['blur','input']
     }

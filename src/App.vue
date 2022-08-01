@@ -1,5 +1,3 @@
-
-
 <template>
   <n-config-provider :theme="them.darkThem">
     <router-view></router-view>
@@ -14,15 +12,13 @@ let flag = JSON.parse(sessionStorage.getItem('themDark') as string)
 switch (flag) {
   case true:
     document.documentElement.classList.add('dark')
-    break;
+    break
   case false:
     document.documentElement.classList.remove('dark')
-    break;
+    break
   default:
-    break;
+    break
 }
-
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
