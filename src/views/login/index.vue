@@ -25,9 +25,8 @@
 import { ref, reactive } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { FormInst, FormItemInst, FormItemRule, FormRules } from 'naive-ui'
-import { rule } from '@/utils'
+import { rule, Success, Error } from '@/utils'
 name: 'Login'
-
 interface FormData {
   user: {
     name: string
@@ -54,9 +53,12 @@ const handleValidateClick = (e: MouseEvent) => {
   e.preventDefault()
   formRef.value?.validate(errors => {
     if (!errors) {
-      console.log(11111)
+      Success('请求成功')
     } else {
-      console.log(errors)
+      if (formValue.user.name.length === 0 && formValue.user.password.length === 0) {
+        return
+      }
+      Error('请求失败')
     }
   })
 }

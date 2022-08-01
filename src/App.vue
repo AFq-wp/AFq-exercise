@@ -1,7 +1,10 @@
 <template>
-  <n-config-provider :theme="them.darkThem">
-    <router-view></router-view>
-  </n-config-provider>
+  <!--这里必须吧这个message组件放在这里 不然是不生效的-->
+  <n-message-provider>
+    <n-config-provider :theme="them.darkThem">
+      <router-view></router-view>
+    </n-config-provider>
+  </n-message-provider>
 </template>
 
 <script setup lang="ts">
