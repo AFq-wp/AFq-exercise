@@ -24,9 +24,10 @@
 <script lang="ts" setup>
 import { ref, reactive } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { FormInst, FormItemInst, FormItemRule, FormRules } from 'naive-ui'
-import { rule, Success, Error } from '@/utils'
+import { FormInst, FormItemInst, FormItemRule, FormRules, useMessage } from 'naive-ui'
+import { rule } from '@/utils'
 name: 'Login'
+
 interface FormData {
   user: {
     name: string
@@ -34,11 +35,12 @@ interface FormData {
   }
 }
 const router = useRouter()
+window.$message = useMessage()
 const formRef = ref<FormInst | null>(null)
 const formValue: FormData = reactive({
   user: {
     name: '2430739179',
-    password: 'Wp1997$'
+    password: 'Wp1997&'
   }
 })
 const size = ref<'small' | 'medium' | 'large'>('medium')
@@ -53,12 +55,9 @@ const handleValidateClick = (e: MouseEvent) => {
   e.preventDefault()
   formRef.value?.validate(errors => {
     if (!errors) {
-      Success('请求成功')
+      window.$message.success('登录成功')
     } else {
-      if (formValue.user.name.length === 0 && formValue.user.password.length === 0) {
-        return
-      }
-      Error('请求失败')
+      console.log(errors)
     }
   })
 }

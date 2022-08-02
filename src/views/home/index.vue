@@ -3,46 +3,34 @@
     我是首页
     <button
       class="bg-indigo-300 w-100px h-100px rounded-20px transition transform dark:bg-dark-100 dark:text-light-900 hover:(scale-110 duration-200 bg-amber-100 text-dark-100 )"
-      @click="checkDark">
+      @click="checkDark"
+    >
       切换模式
     </button>
     <button
       class="bg-indigo-300 w-100px h-100px rounded-20px transition transform dark:bg-dark-100 dark:text-light-900 hover:(scale-110 bg-amber-100 text-dark-100 )"
-      @click="Gologin">
+      @click="Gologin"
+    >
       跳转页面
     </button>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { useRouter } from "vue-router";
-import { themeStore } from "@/store/them";
-import { AddThemDark } from "@/utils/Session";
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { themeStore } from '@/store/them'
 
-const router = useRouter();
-const them = themeStore();
-
-let flag = ref<boolean>(false);
-
+const router = useRouter()
+const them = themeStore()
+// 切换主题颜色
 const checkDark = () => {
-  flag.value = !flag.value;
-  const DARK_CLASS = "dark";
-  if (flag.value === false) {
-    document.documentElement.classList.remove(DARK_CLASS);
-    them.isDark = false;
-    AddThemDark(`${flag.value}`);
-  } else {
-    document.documentElement.classList.add(DARK_CLASS);
-    them.isDark = true;
-    AddThemDark(`${flag.value}`);
-  }
-};
+  them.isDark = !them.isDark
+}
 
 const Gologin = () => {
-  router.push("/login");
-};
+  router.push('/login')
+}
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
