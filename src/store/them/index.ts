@@ -1,3 +1,4 @@
+// 暗黑模式设置 在这里
 import { defineStore } from 'pinia'
 import { ref, computed, watch } from 'vue'
 import { darkTheme } from 'naive-ui';
@@ -6,9 +7,9 @@ export const themeStore = defineStore(
   'theme',  // 这里是id
   () => {
     const isDark = ref<boolean>(false)
-    const darkThem = computed(() => isDark.value ? darkTheme : undefined)
+    const darkThem = computed(() => <boolean | undefined>isDark.value ? darkTheme : undefined)
     //通过监听 isDark 来判断当前是什么主题模式
-    watch(isDark, (newValue) => {
+    watch(isDark, (newValue: boolean) => {
       if (newValue === true) {
         document.documentElement.classList.add('dark')
       } else {
