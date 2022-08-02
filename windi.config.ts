@@ -16,19 +16,19 @@ export default defineConfig({
         green: colors.green,
         oop: 'white',
         toLogin: '#1f2937',
-        LoginBG:"#141e30",
-        LoginBGto:"#243b55"
-        
+        LoginBG: "#141e30",
+        LoginBGto: "#243b55",
       },
       textColor: {
-        'success':'green'
+        'success': 'green'
       }
     },
 
   },
   shortcuts: {
-    'flex-y-center': 'flex items-center',
-    'flex-center': 'flex justify-center items-center',
+    'flex-y-center': 'flex flex-col justify-center items-center ',
+    'flex-x-center': 'flex justify-center items-center',
+    'header': 'text-[24px] font-semibold'
   },
-  
+
 });
