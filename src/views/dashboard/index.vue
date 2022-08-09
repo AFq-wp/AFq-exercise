@@ -1,9 +1,12 @@
 <template>
-  <div class="">后台模板页面</div>
+  <div class="">
+    <AFqLayout></AFqLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
 import {} from 'vue'
+import AFqLayout from '@/layout/index.vue'
 name: 'Dashboard'
 </script>
 

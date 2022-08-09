@@ -46,7 +46,11 @@ import {
   NTimeline,
   NTimelineItem,
   NTooltip,
-  NIcon
+  NIcon,
+  NLayout,
+  NLayoutHeader,
+  NLayoutSider,
+  NLayoutFooter
 } from 'naive-ui';
 
 /** 按需引入naiveUI */
@@ -98,7 +102,11 @@ export default function setupNaiveUI(app: App) {
       NTimeline,
       NTimelineItem,
       NTooltip,
-      NIcon
+      NIcon,
+      NLayout,
+      NLayoutHeader,
+      NLayoutSider,
+      NLayoutFooter
     ]
   });
   app.use(naive);

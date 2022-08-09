@@ -1,6 +1,6 @@
 <template>
   <div class="relative Box w-100vw h-100vh dark:(bg-dark-50) bg-[rgb(96,143,159)]">
-    <ChangeDark></ChangeDark>
+    <ChangeDark :size="35" :depth="1"></ChangeDark>
     <div
       class="w-400px h-400px absolute left-[50%] top-[50%] transform -translate-x-[50%] -translate-y-[50%] p-[20px] text-[#000] bg-[rgb(117,121,71)] dark:(text-[#fff] bg-[rgb(114,83,52)]) rounded-[20px] flex-y-center"
     >
