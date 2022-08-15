@@ -12,3 +12,4 @@ export function setupStore(app: App) {
 
 export * from './them'
 export * from './login'
+export * from './Layout'

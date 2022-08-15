@@ -8,7 +8,6 @@ export const themeStore = defineStore(
   () => {
     const isDark = ref<boolean>(false)
     const darkThem = computed(() => <boolean | undefined>isDark.value ? darkTheme : undefined)
-    // const test = ref<string>('1111111')
     //通过监听 isDark 来判断当前是什么主题模式
     watch(isDark, (newValue: boolean) => {
       if (newValue === true) {

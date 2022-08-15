@@ -55,8 +55,7 @@ const rules: FormRules = {
     password: rule.password
   }
 }
-// 切换模式
-
+//  点击登录
 const handleValidateClick = (e: MouseEvent) => {
   e.preventDefault()
   formRef.value?.validate(errors => {
