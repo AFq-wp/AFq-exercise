@@ -20,14 +20,12 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { themeStore } from '@/store/them'
-
 const router = useRouter()
 const themPinia = themeStore()
 // 切换主题颜色
 const checkDark = () => {
   themPinia.isDark = !themPinia.isDark
 }
-
 const Gologin = () => {
   router.push('/login')
 }

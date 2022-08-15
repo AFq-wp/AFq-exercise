@@ -31,7 +31,7 @@ import Details from '@/layout/details/index.vue'
 import Header from '@/layout/header/index.vue'
 import Tab from '@/layout/tab/index.vue'
 import Side from '@/layout/menuSder/index.vue'
-name: 'AFqLayout'
+defineOptions({name: 'AFqLayout'})
 const LayoutStorePinia = LayoutStore()
 const { mode, headerVisible, siderCollapse, fixedHeaderAndTab, fixedFooter, info } = storeToRefs(LayoutStorePinia)
 </script>

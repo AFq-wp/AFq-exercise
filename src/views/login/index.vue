@@ -30,8 +30,7 @@ import { FormInst, FormItemInst, FormItemRule, FormRules, useMessage } from 'nai
 import { LoginStore } from '@/store'
 import { rule } from '@/utils'
 import ChangeDark from '@/components/ChnageDark/index.vue'
-name: 'Login'
-
+defineOptions({name: 'Login'})
 interface FormData {
   user: {
     name: string
